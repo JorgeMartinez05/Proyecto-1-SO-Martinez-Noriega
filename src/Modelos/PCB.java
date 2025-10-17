@@ -4,10 +4,24 @@
  */
 package Modelos;
 
+import Enums.EstadoProceso;
+
 /**
  *
  * @author jorge
  */
 public class PCB {
-    
+   private int pc;                
+    private int ir;                
+    private int prioridad;
+    private int tiempoEspera;
+    private EstadoProceso estado;
+
+    public PCB() {
+        this.pc = 0;
+        this.ir = 0;
+        this.prioridad = 0;
+        this.tiempoEspera = 0;
+        this.estado = EstadoProceso.LISTO;
+    } 
 }
