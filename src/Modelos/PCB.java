@@ -5,6 +5,8 @@
 package Modelos;
 
 import Enums.EstadoProceso;
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 /**
  *
@@ -23,5 +25,72 @@ public class PCB {
         this.prioridad = 0;
         this.tiempoEspera = 0;
         this.estado = EstadoProceso.LISTO;
-    } 
+    }
+    
+    @JsonCreator
+    public PCB(@JsonProperty("pc") int pc,
+            @JsonProperty("ir") int ir,
+            @JsonProperty("prioridad") int prioridad,
+            @JsonProperty("tiempoEspera") int tiempoEspera,
+            @JsonProperty("estado") EstadoProceso estado) {
+        this.pc = pc;
+        this.ir = ir;
+        this.prioridad = prioridad;
+        this.tiempoEspera = tiempoEspera;
+        this.estado = (estado == null) ? EstadoProceso.LISTO : estado;
+    }
+
+    public int getPc() {
+        return pc;
+    }
+
+    public void setPc(int pc) {
+        this.pc = pc;
+    }
+
+    public int getIr() {
+        return ir;
+    }
+
+    public void setIr(int ir) {
+        this.ir = ir;
+    }
+
+    public int getPrioridad() {
+        return prioridad;
+    }
+
+    public void setPrioridad(int prioridad) {
+        this.prioridad = prioridad;
+    }
+
+    public int getTiempoEspera() {
+        return tiempoEspera;
+    }
+
+    public void setTiempoEspera(int tiempoEspera) {
+        this.tiempoEspera = tiempoEspera;
+    }
+
+    public void incTiempoEspera() {
+        this.tiempoEspera++;
+    }
+
+    public void resetTiempoEspera() {
+        this.tiempoEspera = 0;
+    }
+
+    public EstadoProceso getEstado() {
+        return estado;
+    }
+
+    public void setEstado(EstadoProceso estado) {
+        this.estado = estado;
+    }
+
+    // Utilidades de ejecución
+    public void tick() {
+        this.pc++;
+        this.ir++;
+    }
 }
