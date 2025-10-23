@@ -4,6 +4,8 @@
  */
 package proyecto.pkg1.so.martinez.noriega;
 
+import Interfaces.Bienvenidos;
+
 /**
  *
  * @author jorge
@@ -14,7 +16,7 @@ public class Proyecto1SOMartinezNoriega {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+          Bienvenidos v1 = new Bienvenidos();
     }
     
 }

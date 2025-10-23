@@ -4,25 +4,12 @@
  */
 package Interfaces;
 
-import java.awt.BorderLayout;
-import org.jfree.chart.ChartFactory;
-import org.jfree.chart.ChartPanel;
-import org.jfree.chart.JFreeChart;
-import javax.swing.SwingUtilities;
-
-import java.awt.Color;
-import java.awt.Dimension;
-import org.jfree.chart.plot.PiePlot;
 import org.jfree.data.general.DefaultPieDataset;
 import EDD.*;
-import Core.Simulador;
-import Core.JsonHandler;
 import Modelos.CPU;
 import Core.Planificador;
-import Modelos.Proceso;
 import Core.Reloj;
 import java.util.concurrent.Semaphore;
-import javax.swing.JOptionPane;
 
 /**
  *
@@ -30,10 +17,6 @@ import javax.swing.JOptionPane;
  */
 public class VistaSimulacion extends javax.swing.JFrame {
 
-    DefaultPieDataset dataset1;
-    DefaultPieDataset dataset2;
-    DefaultPieDataset dataset3;
-    DefaultPieDataset dataset4;
     CPU[] cpus;
     Reloj reloj;
     Lista listolista;

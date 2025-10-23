@@ -21,7 +21,7 @@ public final class Planificador {
     private final Lista exitList;
     private final Lista allProcessList;
 
-    private final Simulador controlador; // tu UI/“Simulador”
+    private final Simulador controlador;
     private int selectedAlgorithm = -1;
 
     public Planificador(Lista readyList, Lista blockedList, Lista exitList,
@@ -92,7 +92,7 @@ public final class Planificador {
         return out;
     }
 
-    // ===== Actualizaciones a colas/PCB (igual que ya tenías) =====
+    // ===== Actualizaciones a colas/PCB =====
     public void updatePCB(Proceso process, int pc, int mar, String state) {
         process.setEstado(state);
         process.setPc(pc);
